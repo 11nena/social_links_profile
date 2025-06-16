@@ -8,22 +8,80 @@
   padding: 0;
 }
 
+/* Root styles apply to both themes */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: hsl(0, 0%, 8%); /* Grey 900 */
-  color: hsl(0, 0%, 100%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* NEW wrapper to stack card + attribution */
+/* wrapper to stack card + attribution */
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Toggle button */
+#theme-toggle {
+  background: none;
+  border: 2px solid hsl(75, 94%, 57%);
+  color: hsl(75, 94%, 57%);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 8%);
+}
+
+/* DARK THEME (default) */
+body.dark {
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.dark .card {
+  background-color: hsl(0, 0%, 12%);
+}
+
+body.dark .button {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.dark .button:hover {
+  background-color: hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 8%);
+}
+
+/* LIGHT THEME */
+body.light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 12%);
+}
+
+body.light .card {
+  background-color: hsl(0, 0%, 95%);
+}
+
+body.light .button {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 12%);
+}
+
+body.light .button:hover {
+  background-color: hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 8%);
 }
 
 /* 3. Card container */

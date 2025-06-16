@@ -19,6 +19,8 @@
 </head>
 <body>
   <div class="wrapper">
+    <button id="theme-toggle" aria-label="Toggle theme">🌞 Light Mode</button>
+
     <main class="card">
       <img src="./assets/images/avatar-jessica.jpeg" alt="Photo of Jessica Randall" />
 
@@ -39,6 +41,27 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </div>
+
+  <script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Set default theme
+  body.classList.add('dark');
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    body.classList.toggle('dark');
+
+    // Update button text based on current mode
+    if (body.classList.contains('light')) {
+      toggle.textContent = '🌙 Dark Mode';
+    } else {
+      toggle.textContent = '🌞 Light Mode';
+    }
+  });
+</script>
+
 </body>
 
 
